@@ -10,11 +10,7 @@
 
 # production
 /build
-Finance
-models
-router
-server.js
-controllers
+
 # misc
 .DS_Store
 .env.local
