@@ -1,9 +1,7 @@
 # Finance Management System
 
 This is a Finance Management System built with Node.js, Express, and MongoDB. The system handles various financial operations such as employee salary payments, expense tracking, revenue management, and more.
-
-## Project Structure
-. ├── .dockerignore ├── .env ├── .gitignore ├── controllers/ │ └── controllers.js ├── docker.compose.yml ├── Dockerfile ├── Finance/ │ └── finance.js ├── models/ │ └── Models.js ├── package.json ├── router/ │ └── Router.js ├── server.js
+This project was developed as part of a school project called Hospital Management System, and I, Feyisa Kenenisa, contributed to its development.
 
 ## Getting Started
 
@@ -29,9 +27,10 @@ npm install
 ```
 3. Create a ```.env ``` file in the root directory and add the following environment variables:
 
-- PORT=3000
-- database=mongodb://localhost:27017/Tina_Hospital
-
+```sh
+PORT=3000
+database=mongodb://localhost:27017/Tina_Hospital
+```
 ### Running the Application
 ### Using Docker
 1. Build and run the Docker containers:
@@ -95,10 +94,10 @@ node server.js
 - transactionId: String, default null
 
 #### [Monthly Revenue Record Schema](./models/Models.js)
-year: Number
-month: Number
-category: String
-amount: Number, default 0
+- year: Number
+- month: Number
+- category: String
+- amount: Number, default 0
 
 ### [Paid Salary Schema](./models/Models.js)
 - name: String
