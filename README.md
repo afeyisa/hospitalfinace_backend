@@ -1,4 +1,4 @@
-# Finance Management System
+# Hospital Finance Management System
 
 This is a Finance Management System built with Node.js, Express, and MongoDB. The system handles various financial operations such as employee salary payments, expense tracking, revenue management, and more.
 This project was developed as part of a school project called Hospital Management System, and I, Feyisa Kenenisa, contributed to its development.
