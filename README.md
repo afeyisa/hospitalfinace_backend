@@ -42,6 +42,9 @@ docker-compose up --build
 
 ### Without Docker
 1. Start the MongoDB server
+```sh
+mongdb
+```
 2. Start the application
 ```sh
 node server.js
@@ -70,7 +73,8 @@ node server.js
 - GET /api/v1/services - Get all given services
 
 ### [Models](./models/Models.js)
-#### [Employee Schema] (./models/Models.js)
+
+#### [Employee Schema](./models/Models.js)
 - name: String, required
 - employeeID: String, unique
 - salary: Number, default 0
@@ -87,25 +91,16 @@ node server.js
 - year: Number
 - month: Number
 - Category: String
-- BankName: String
-- Amount: Number
+- Bankname: String
 - transactionId: String, default null
-- Sold Product Schema
-- productId: String
-- name: String
-- unitPrice: Number
-- itemQuantity: Number
-- category: String
-- totalPrice: Number
-- dateOfSale: Date
 
-#### [Monthly Revenue Record Schema] (./models/Models.js)
+#### [Monthly Revenue Record Schema](./models/Models.js)
 year: Number
 month: Number
 category: String
 amount: Number, default 0
 
-### [Paid Salary Schema] (./models/Models.js)
+### [Paid Salary Schema](./models/Models.js)
 - name: String
 - employeeID: String
 - paidAmount: Number
