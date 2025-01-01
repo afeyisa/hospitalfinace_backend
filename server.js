@@ -9,7 +9,7 @@
     const cors     = require('cors');
     const mongoose = require('mongoose');
     
-    dotenv.config({path: './config.env'});
+    dotenv.config({path: './.env'});
     // import the finance 
     const finance = require('./Finance/finance');
 
