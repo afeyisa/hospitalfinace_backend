@@ -71,7 +71,7 @@ node server.js
 
 ### Models
 #### Employee Schema
-- [name: String, required](models/Model.js)
+- [name: String, required](./models/Model.js)
 employeeID: String, unique
 salary: Number, default 0
 role: String
