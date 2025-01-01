@@ -3,12 +3,12 @@
     const cors = require('cors')
     const financeRoute= require('../router/Router')
     const schemas = require('../models/Models');
-    const cron = require('node-cron');
+    // const cron = require('node-cron');
 
 // schedule to monthly to reset the ispaid of the employee
-    cron.schedule('0 0 1 * *',  async()  => {
-        await schemas.employee.updateMany({},{isPaid:false});
-            });
+    // cron.schedule('0 0 1 * *',  async()  => {
+    //     await schemas.employee.updateMany({},{isPaid:false});
+    //         });
 
     const finance= express();
     finance.use(cors());
