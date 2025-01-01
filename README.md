@@ -27,10 +27,10 @@ cd hospitalfinace_backend
 ```sh
 npm install
 ```
-3. Create a .env file in the root directory and add the following environment variables:
+3. Create a ```.env ``` file in the root directory and add the following environment variables:
 
-PORT=5000
-database=mongodb://localhost:27017/Tina_Hospital
+- PORT=3000
+- database=mongodb://localhost:27017/Tina_Hospital
 
 ### Running the Application
 ### Using Docker
@@ -38,33 +38,47 @@ database=mongodb://localhost:27017/Tina_Hospital
 ```sh
 docker-compose up --build
 ```
-2. The application will be available at ```http://localhost:3000```
+2. The application will be available at ``` http://localhost:3000 ```
 
 ### Without Docker
-1. Start the MongoDB server:
-2. Start the application:
+1. Start the MongoDB server
+2. Start the application
 ```sh
 node server.js
 ```
-3. The application will be available at ```http://localhost:5000```
+3. The application will be available at ``` http://localhost:3000 ```
 
 
 ## API Endpoints
 ### Employee Management
-GET /api/v1/salary - Get all employees
-POST /api/v1/salary - Record  employee payment salary
-PATCH /api/v1/salary - Update employee information
-GET /api/v1/paidsalary - Get all paid salaries
+- GET /api/v1/salary - Get all employees
+- POST /api/v1/salary - Record  employee payment salary
+- PATCH /api/v1/salary - Update employee information
+- GET /api/v1/paidsalary - Get all paid salaries
 
 ### Expense Management
-GET /api/v1/expenses - Get all expenses
-POST /api/v1/expenses - Add a new expense
+- GET /api/v1/expenses - Get all expenses
+- POST /api/v1/expenses - Add a new expense
 
 ### Revenue Management
-GET /api/v1/revenue - Get all revenue records
+- GET /api/v1/revenue - Get all revenue records
 
 ### Product Management
-GET /api/v1/soldproduct - Get all sold products
+- GET /api/v1/soldproduct - Get all sold products
 
 ### Service Management
-GET /api/v1/services - Get all given services
+- GET /api/v1/services - Get all given services
+
+### Models
+#### Employee Schema
+- ["./models/Model.js"]name: String, required
+employeeID: String, unique
+salary: Number, default 0
+role: String
+bonus: Number, default 0
+currentMonthPenalty: Number, default 0
+outstandingDebt: Number, default 0
+bankName: String
+bankAccountNumber: Number
+onleave: Boolean, default false
+isPaid: Boolean, default false
