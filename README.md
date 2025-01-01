@@ -69,16 +69,50 @@ node server.js
 ### Service Management
 - GET /api/v1/services - Get all given services
 
-### Models
-#### Employee Schema
-- [name: String, required](./models/Models.js)
-employeeID: String, unique
-salary: Number, default 0
-role: String
-bonus: Number, default 0
-currentMonthPenalty: Number, default 0
-outstandingDebt: Number, default 0
-bankName: String
-bankAccountNumber: Number
-onleave: Boolean, default false
-isPaid: Boolean, default false
+### [Models](./models/Models.js)
+#### [Employee Schema] (./models/Models.js)
+- name: String, required
+- employeeID: String, unique
+- salary: Number, default 0
+- role: String
+- bonus: Number, default 0
+- currentMonthPenalty: Number, default 0
+- outstandingDebt: Number, default 0
+- bankName: String
+- bankAccountNumber: Number
+- onleave: Boolean, default false
+- isPaid: Boolean, default false
+
+#### [Expense Schema](./models/Models.js)
+- year: Number
+- month: Number
+- Category: String
+- BankName: String
+- Amount: Number
+- transactionId: String, default null
+- Sold Product Schema
+- productId: String
+- name: String
+- unitPrice: Number
+- itemQuantity: Number
+- category: String
+- totalPrice: Number
+- dateOfSale: Date
+
+#### [Monthly Revenue Record Schema] (./models/Models.js)
+year: Number
+month: Number
+category: String
+amount: Number, default 0
+
+### [Paid Salary Schema] (./models/Models.js)
+- name: String
+- employeeID: String
+- paidAmount: Number
+- dateOfTransaction: Date
+- bankName: String
+- bankAccountNumber: Number
+- transactionID: String
+
+## Author
+Feyisa Kenenisa
