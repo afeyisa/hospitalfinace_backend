@@ -6,7 +6,7 @@ const schemas = require('../models/Models');
                 const e = await schemas.employee.find();
                 res.status(200).send(e);
             }catch (err){
-                res.status(404).json({ error: 'Internal server error' });}};
+                res.status(404).json({ error: 'Employee not found' });}};
 
 
     exports.payEmployee = async(req,res)=>{ 
@@ -21,11 +21,16 @@ const schemas = require('../models/Models');
                      transactionID :    body.transactionID
                 };
          await schemas.PaidSalary.create(p);
-         await schemas.employee.updateOne({_id:req.body['_id']},{isPaid:true});
-         res.status(200).send('ok');
+         try{
+         await schemas.employee.updateOne({_id:req.body['_id']},{isPaid:true});}
+         catch{
+            res.status(400).json({ error: 'unable to update employee info' }); 
+         }
+
+         res.status(201).send('ok');
         }
         catch(err){
-             res.status(404).json({ error: 'Internal server error' });
+             res.status(500).json({ error: 'Internal server error' });
         }
     };
 
@@ -36,7 +41,7 @@ const schemas = require('../models/Models');
             res.status(200).send(p);
         }
         catch{
-            res.status(404).json({ error: 'Internal server error' });
+            res.status(404).json({ error: 'Payment not found' });
         }
     };
 
@@ -47,7 +52,7 @@ const schemas = require('../models/Models');
             res.status(200).send('Succeded');
             
              }catch {
-            res.status(404).json({ error: 'Internal server error' });  }
+            res.status(400).json({ error: 'unable to update employee info' });  }
     };
 
     //2 handling the expense payment
@@ -62,7 +67,7 @@ const schemas = require('../models/Models');
         req.body['month']=Month;
         await schemas.expense.create(req.body);
         res.status(200).json('Successfully summitted !');
-        }catch{    res.status(404).json({ error: 'Internal server error' });}
+        }catch{    res.status(500).json({ error: 'Internal server error' });}
     
     };
     
@@ -73,7 +78,7 @@ const schemas = require('../models/Models');
             const e = await schemas.expense.find();
             res.status(200).send(e);
         }catch {
-             res.status(404).json({ error: 'Internal server error' });}
+             res.status(404).json({ error: 'Expenses not found' });}
     };
 
 
@@ -85,7 +90,7 @@ const schemas = require('../models/Models');
             res.status(200).send(s);
            
         }catch (err){
-              res.status(404).json({ error: 'Internal server error' });}
+              res.status(404).json({ error: 'services not found' });}
       
    };
     //4  handling sold product
@@ -94,7 +99,7 @@ const schemas = require('../models/Models');
             const e = await schemas.soldproduct.find();
             res.status(200).send(e);
         }catch (err){
-            res.status(404).json({ error: 'Internal server error' });} 
+            res.status(404).json({ error: 'sold product not found' });} 
     };
 
 
@@ -153,7 +158,7 @@ const schemas = require('../models/Models');
         
             res.status(200).send(r);
         }catch(err){ 
-            res.status(404).json({ error: 'Internal server error' });
+            res.status(404).json({ error: 'unable find revenue' });
         } 
         };
 
