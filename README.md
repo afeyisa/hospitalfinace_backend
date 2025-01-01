@@ -51,7 +51,7 @@ node server.js
 3. The application will be available at ``` http://localhost:3000 ```
 
 
-## API Endpoints
+## [API Endpoints](./router/Router.js)
 ### Employee Management
 - GET /api/v1/salary - Get all employees
 - POST /api/v1/salary - Record  employee payment salary
@@ -71,7 +71,7 @@ node server.js
 ### Service Management
 - GET /api/v1/services - Get all given services
 
-### [Models](./models/Models.js)
+## [Models](./models/Models.js)
 
 #### [Employee Schema](./models/Models.js)
 - name: String, required
@@ -111,5 +111,5 @@ node server.js
 ## Author
 Feyisa Kenenisa
 
-### License
+## License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
